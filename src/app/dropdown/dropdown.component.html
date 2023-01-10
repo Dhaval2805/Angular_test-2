@@ -1,0 +1,52 @@
+<div class="mt-5 main">
+  <form [formGroup]="dropdowndata" class="form-group col-md-4" style="margin: 10px;">
+    <label>Territory</label> <br>
+    <select class="form1" formControlName="select" (change)="changeTerritorydata($event.target)">
+      <option *ngFor="let i of alllocationName" value={{i.locationId}}>{{i.locationName}}</option>
+    </select>
+
+    <br><br>
+    <div>
+      <label>Campus </label> <br>
+      <select class="form1" formControlName="campus" (change)="changeCampusdata($event.target)">
+        <option *ngFor="let i of campusname" value={{i.campusId}}>{{i.name}}</option>
+      </select>
+    </div>
+
+    <br>
+    <div>
+      <label>Item </label> <br>
+      <select class="form1" formControlName="item">
+        <option *ngFor="let i of itemdata" value={{i.entityConfigID}}>{{i.itemName}}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3" (click)="Postalldata()">Get Data </button>
+  </form>
+
+
+
+  <table class="table mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Description</th>
+        <th scope="col">Campus</th>
+        <th scope="col">ExtendedCost</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">UnitCost</th>
+        <th scope="col">Uom</th>
+        <th scope="col">Zone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of lastalldata">
+        <td>{{i.description}}</td>
+        <td>{{i.campus}}</td>
+        <td>{{i.extendedCost}}</td>
+        <td>{{i.quantity}}</td>
+        <td>{{i.unitCost | currency}}</td>
+        <td>{{i.uom}}</td>
+        <td>{{i.zone}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

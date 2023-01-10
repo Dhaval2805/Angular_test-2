@@ -1,0 +1,20 @@
+.main{
+    margin: 50px;
+    border: 1px solid lightgray; 
+    border-radius: 10px;
+    width: 50%; 
+    margin: auto;
+}
+
+.form1{
+    width: 120%;
+    border-radius: 4px;
+    height: 30px;
+}
+
+.table{
+    border: 1px solid lightgray;
+    border-radius: 17px;
+    width: 50%;
+    margin: 10px;
+}
